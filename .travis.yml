@@ -6,5 +6,5 @@ services:
 script: 
   - mvn clean verify -f service1/pom.xml
   - mvn clean verify -f service2/pom.xml
-  - docker build -t yeildifyalex/service2 service2/target/docker/Dockerfile
-  - docker build -t yeildifyalex/service1 service1/target/docker/Dockerfile
+  - docker build -t yeildifyalex/service2 -f service2/target/docker/Dockerfile
+  - docker build -t yeildifyalex/service1 -f service1/target/docker/Dockerfile
