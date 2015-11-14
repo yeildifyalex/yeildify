@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk --update add openjdk7-jdk
+RUN apk --update add openjdk7
 
 COPY target/lib /usr/local/${project.artifactId}/lib
 COPY trget/${project.artifactId}-${project.version}.jar /usr/local/${project.artifactId}/${project.artifactId}-${project.version}.jar
