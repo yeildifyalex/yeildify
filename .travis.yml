@@ -1,15 +1,6 @@
 sudo: required
 language: 
   - java
-services:
-  - docker
 script: 
   - mvn clean verify -f service1/pom.xml
   - mvn clean verify -f service2/pom.xml
-  - docker build -t yeildifyalex/service2 service2/target/docker/Dockerfile
-  - docker build -t yeildifyalex/service1 service1/target/docker/Dockerfile
-deploy:
-  - docker run yeildifyalex/service1 -p 127.0.0.1:8080:8080
-  - docker run yeildifyalex/service2
-after_deploy:
-  - mvn clean verify -f service1-integration-test/pom.xml
