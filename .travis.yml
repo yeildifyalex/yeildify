@@ -8,7 +8,7 @@ script:
   - mvn clean install -f service2/pom.xml
   - docker build -t yeildifyalex/service1 service1/target/
   - docker build -t yeildifyalex/service2 service2/target/
-  - docker run -p 8080:8080 yeildifyalex/service1
-  - docker run yeildifyalex/service2
+  - docker run -d -p 8080:8080 yeildifyalex/service1
+  - docker run -d yeildifyalex/service2
   - mvn clean verify -f service1-integration-test/pom.xml
   
