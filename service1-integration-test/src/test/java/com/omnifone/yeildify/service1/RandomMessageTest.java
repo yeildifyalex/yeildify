@@ -21,10 +21,9 @@ public class RandomMessageTest {
 
     @Test
     public void testRandMsg_Simple() {
-        String message = "Hello There";
         JsonPath json = given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .body("{\"message\":\"" + message + "\"}")
+                .body("{\"message\":\"Hello There\"}")
                 .log().all()
                 .expect()
                 .statusCode(200)
@@ -33,7 +32,7 @@ public class RandomMessageTest {
                 .body().jsonPath();
 
         Assert.assertNotNull("JsonPath Not Null", json);
-        Assert.assertEquals("Message", message, json.getString("message"));
+        Assert.assertEquals("Message", "erehT olleH", json.getString("message"));
         Double randomValue = json.getDouble("rand");
         Assert.assertNotNull("Random Not Null", randomValue);
         Assert.assertTrue("Random >= 0 && < 1", randomValue >= 0 && randomValue < 1);
@@ -41,12 +40,11 @@ public class RandomMessageTest {
 
     @Test
     public void testRandMsg_Repeated() {
-        String message = "Hello There";
         Set<Double> seenRands = new HashSet();
         for (int i = 0; i < 3; i++) {
             JsonPath json = given().contentType(ContentType.JSON)
                     .accept(ContentType.JSON)
-                    .body("{\"message\":\"" + message + "\"}")
+                    .body("{\"message\":\"Hello There\"}")
                     .log().all()
                     .expect()
                     .statusCode(200)
@@ -55,7 +53,7 @@ public class RandomMessageTest {
                     .body().jsonPath();
 
             Assert.assertNotNull("JsonPath Not Null", json);
-            Assert.assertEquals("Message", message, json.getString("message"));
+            Assert.assertEquals("Message", "erehT olleH", json.getString("message"));
             Double randomValue = json.getDouble("rand");
             Assert.assertNotNull("Random Not Null", randomValue);
             Assert.assertTrue("Random >= 0 && < 1", randomValue >= 0 && randomValue < 1);

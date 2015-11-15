@@ -30,7 +30,7 @@ public class RamdomResourceImpl {
     @POST
     public RandomMessage generateRandomValue(Message msg) {
         RandomMessage result = new RandomMessage();
-        result.setMessage(msg.getMessage());
+        result.setMessage(new StringBuilder(msg.getMessage()).reverse().toString());
         result.setRand(RAND.nextDouble());
         return result;
     }
