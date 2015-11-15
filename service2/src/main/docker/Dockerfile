@@ -7,7 +7,4 @@ COPY ./${project.artifactId}-${project.version}.jar /usr/local/${project.artifac
 
 WORKDIR /usr/local/${project.artifactId}
 
-CMD ["/usr/bin/java", 
-    "-cp", 
-    "lib/*:${project.artifactId}-${project.version}.jar", 
-    "com.sandopolus.yeildify.${project.artifactId}.Main"]
+CMD ["/usr/bin/java", "-cp", "lib/*:${project.artifactId}-${project.version}.jar", "com.sandopolus.yeildify.${project.artifactId}.Main"]
