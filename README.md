@@ -3,12 +3,16 @@ As defined at https://gist.github.com/willfrew/5c86559600fa39fa5f8a
 
 ## Service 1
 A simple Java REST service which takes a JSON message object and returns the same JSON with a random number between 0 & 1 included in the response.
-The REST Server is embedded within the Jar & libraries so it can be run directly from Java
+
+The REST Server is embedded within the Jar & libraries so it can be run directly from Java.
+
 The Dockerfile is contained within the Maven src structure so that simple substitution can be performed.
 
 ## Service 2
 A simple Java REST service which takes a JSON message object and returns the message in reversed order.
-The REST Server is embedded within the Jar & libraries so it can be run directly from Java
+
+The REST Server is embedded within the Jar & libraries so it can be run directly from Java.
+
 The Dockerfile is contained within the Maven src structure so that simple substitution can be performed.
 
 ## Service 1 Integration Test
