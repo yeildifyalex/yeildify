@@ -6,5 +6,6 @@ services:
 script: 
   - mvn clean install -f service1/pom.xml
   - mvn clean install -f service2/pom.xml
-  - docker build -t yeildifyalex/service2 service2/target/docker
   - docker build -t yeildifyalex/service1 service1/target/docker
+  - docker build -t yeildifyalex/service2 service2/target/docker
+  
