@@ -18,3 +18,15 @@ The Dockerfile is contained within the Maven src structure so that simple substi
 ## Service 1 Integration Test
 A simple Maven project which uses the surefire plugin and JUnit to control the running of the tests.
 RestAssured is used to provide a clean way of creating and validating the HTTP request/response.
+
+## Travis CI Setup
+
+The travis.yml file is setup so that it performs the following actions in order:
+
+1. Build Service1 (Maven Clean & Install)
+2. Build Service2 (Maven Clean & Install)
+3. Docker Build Service1 (Docker Build with Tag yeildifyalex/service1)
+4. Docker Build Service2 (Docker Build with Tag yeildifyalex/service2)
+5. Docker Run Service1 (Docker Run Detached with Port Mapping 8080 to 8080 for Tag yeildifyalex/service1)
+6. Docker Run Service2 (Docker Run Detached for Tag yeildifyalex/service2)
+7. Run Integration Tests (Maven Clean Verify)
