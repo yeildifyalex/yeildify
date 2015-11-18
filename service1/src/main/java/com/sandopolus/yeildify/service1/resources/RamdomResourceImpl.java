@@ -53,7 +53,7 @@ public class RamdomResourceImpl {
     @POST
     public RandomMessage generateRandomValue(Message msg) {
         try {
-            HttpPost req = new HttpPost("http://localhost:8081/reverse");
+            HttpPost req = new HttpPost("http://service2:8080/reverse");
             req.addHeader("accept", "application/json");
             req.addHeader("content-type", "application/json");
             req.setEntity(new StringEntity(JSON_MAPPER.writeValueAsString(msg)));
