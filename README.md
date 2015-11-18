@@ -2,7 +2,7 @@
 As defined at https://gist.github.com/willfrew/5c86559600fa39fa5f8a
 
 ## Service 1
-A simple Java REST service which takes a JSON message object and returns a JSON object with the message reversed and a random number between 0 & 1 included in the response.
+A simple Java REST service which takes a JSON message object, passes this through to Service and then returns a JSON object with the reversed message from Service 2 and a random number between 0 & 1 included in the response.
 
 The REST Server is embedded within the Jar & libraries so it can be run directly from Java.
 
